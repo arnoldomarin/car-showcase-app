@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
 import { calculateCarRent } from '@/utils';
+import { CarDetails } from '.';
 
 interface CarCardProps {
     car: CarProps;
@@ -15,7 +16,7 @@ const CarCard = ({ car } :  CarCardProps) => {
     const carRent = calculateCarRent(city_mpg, year);
 
     const [isOpen, setIsOpen] = useState(false);
-    
+
     return (
         <div className='car-card group'>
             <div className='car-card__content'>
@@ -80,6 +81,8 @@ const CarCard = ({ car } :  CarCardProps) => {
                     />
                 </div>
             </div>
+
+            <CarDetails />
         </div>
     )
 }
