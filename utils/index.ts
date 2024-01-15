@@ -48,3 +48,15 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
   
     return `${url}`;
   } 
+
+  export const updateSearchParams = (type: string, value: string) => {
+    const searchParams = new URLSearchParams(window.location.search);
+    
+    // Update or delete the 'model' search parameter based on the 'model' value
+    searchParams.set(type, value);
+
+    // Generate the new pathname with the updated search parameters
+    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+    return newPathname;
+  }
