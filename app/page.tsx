@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { fetchCars } from '@/utils';
 import { fuels, yearsOfProduction } from '@/constants';
+import { HomeProps } from '@/types';
 
 
 export default async function Home( { searchParams }: HomeProps ) {
@@ -38,7 +39,7 @@ export default async function Home( { searchParams }: HomeProps ) {
             <section>
               <div className='home__cars-wrapper'>
                 {allCars?.map((car) => (
-                  <CarCard car={car}/>
+                  <CarCard car={car} key={`${car.model} + ${car.year}`}/>
                 ))}
               </div>
 
