@@ -35,3 +35,15 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('vehicleDetails', () => { 
+    cy.visit('http://localhost:3000');
+    if (cy.get('.car-card').should('have.length.greaterThan', 0)) {
+        cy.get('.car-card').should('have.length.greaterThan', 0);
+        cy.get('[data-testid="cypress-no-results"]').should('not.exist');
+        cy.get('[data-testid="open-car-details-button"]').first().click({ force: true });
+    } else {
+        cy.get('.car-card').should('not.exist');
+        cy.get('[data-testid="cypress-no-results"]').should('exist');
+    }
+})

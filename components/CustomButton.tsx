@@ -9,7 +9,7 @@ function CustomButton({ title, containerStyles, handleClick, btnType, textStyles
         type={btnType || "button"}
         className={`custom-btn ${containerStyles}`}
         onClick={handleClick}
-        data-testid={"open-car-details-button"}
+        data-testid={ title === 'View More'? "open-car-details-button" : ''}
     >
         <span className={`flex-1 ${textStyles}`}>
             {title}

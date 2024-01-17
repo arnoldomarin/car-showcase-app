@@ -6,7 +6,7 @@ import Image from 'next/image';
 import {useRouter} from 'next/navigation';
 
 const SearchButton = ({ otherClasses }: {otherClasses: string}) => (
-    <button type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
+    <button data-testid={'vehicle-search-bar'} type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
         <Image
             src="/magnifying-glass.svg"
             alt='Search icon'
@@ -84,6 +84,7 @@ const SearchBar = () => {
           onChange={(e) => setModel(e.target.value)}
           placeholder='Tiguan...'
           className='searchbar__input'
+          data-testid={'car-model-search-input'}
         />
         <SearchButton otherClasses='sm:hidden' />
       </div>
