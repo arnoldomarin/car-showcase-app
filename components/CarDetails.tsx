@@ -23,6 +23,7 @@ const CarDetails = ({ isOpen, closeModal, car} : CarDetailsProps) => {
                 as="div" 
                 className='realtive z-10' 
                 onClose={closeModal}
+                data-testid={"cypress-car-details-modal"}
             >
                 <Transition.Child
                     as={Fragment}
