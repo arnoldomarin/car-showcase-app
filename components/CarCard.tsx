@@ -18,7 +18,7 @@ const CarCard = ({ car } :  CarCardProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className='car-card group'>
+        <div data-testid={`car-card-${make}-${model}-${year}`} className='car-card group'>
             <div className='car-card__content'>
                 <h2 className='car-card__content-title'>
                     {make} {model}
